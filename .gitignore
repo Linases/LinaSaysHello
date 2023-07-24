@@ -6,9 +6,9 @@
 # TASK 2 #
 *.docx
 *.txt
-![25].txt
 *.jpeg
-
+bin/
+obj/
 
 
 ##########
