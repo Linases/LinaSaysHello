@@ -43,16 +43,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\LinaSaysHello.exe.config" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\LinaSaysHello.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\LinaSaysHello.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\LinaSaysHello.csproj.SuggestedBindingRedirects.cache" />
     <None Include="SomeIgnoredFiles1\1.docx" />
     <None Include="SomeIgnoredFiles2\2.docx" />
     <None Include="SomeIgnoredFiles3\.gitkeep" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\LinaSaysHello.exe" />
+    <Content Include="bin\Debug\LinaSaysHello.pdb" />
+    <Content Include="obj\Debug\LinaSaysHello.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\LinaSaysHello.exe" />
+    <Content Include="obj\Debug\LinaSaysHello.pdb" />
     <Content Include="SomeIgnoredFiles1\1.txt" />
     <Content Include="SomeIgnoredFiles1\2.txt" />
     <Content Include="SomeIgnoredFiles2\3.txt" />
@@ -61,6 +72,9 @@
     <Content Include="SomeIgnoredFiles3\1.jpeg" />
     <Content Include="SomeIgnoredFiles3\2.jpeg" />
     <Content Include="SomeIgnoredFiles3\3.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
