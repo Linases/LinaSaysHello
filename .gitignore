@@ -7,8 +7,8 @@
 *.docx
 *.txt
 *.jpeg
-bin/
-obj/
+bin/Debug
+obj/Debug
 
 
 ##########
