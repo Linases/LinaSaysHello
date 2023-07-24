@@ -14,7 +14,6 @@ namespace LinaSaysHello
             string name = Console.ReadLine();
             Console.WriteLine("Nice to meet you " + name);
             Console.WriteLine("Anastasiya");
-            Console.WriteLine("Semenova");
             Console.ReadLine();
         }
     }
