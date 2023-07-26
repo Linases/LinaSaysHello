@@ -52,10 +52,6 @@ namespace LinaSaysHello
             //Task 5//
             Console.Write("Enter a random number: ");
             int randomNumber1 = Convert.ToInt32(Console.ReadLine());
-            String result1 = (randomNumber1 % 2 == 0) ? "even number" : "odd number";
-            Console.WriteLine("{0} is {1}", randomNumber1, result1);
-
-            /*
             if (randomNumber1 % 2 == 0)
             {
                 Console.WriteLine(randomNumber1 + " is an even number");
@@ -64,7 +60,6 @@ namespace LinaSaysHello
             {
                 Console.WriteLine(randomNumber1 + " is an odd number ");
             }
-            */
             Console.ReadLine();
         }
     }
