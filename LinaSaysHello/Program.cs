@@ -13,6 +13,45 @@ namespace LinaSaysHello
     {
         static void Main(string[] args)
         {
+            //Task 1//
+            Console.Write("Enter first number: ");
+            int enteredNr1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter second number: ");
+            int enteredNr2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter one aritmetic operation: +, -, *, /");
+            char aritmeticOperation = Convert.ToChar(Console.ReadLine());
+
+            switch (aritmeticOperation)
+            {
+                case '+':
+                    {
+                        Console.WriteLine("{ 0} + { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                    }
+                    break;
+
+                case '-':
+                    {
+                        Console.WriteLine("{ 0} - { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                    }
+                    break;
+                case '*':
+                    {
+                        Console.WriteLine("{ 0} * { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                    }
+                    break;
+                case '/':
+                    {
+                        Console.WriteLine("{ 0} / { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                    }
+                    break;
+                default :
+                    Console.WriteLine("Operation is not present in the list of allowed operations");
+                    break;
+            }
+        
+
             //Task 2//
             Console.Write("Enter a random number: ");
             int a = Convert.ToInt32(Console.ReadLine());
