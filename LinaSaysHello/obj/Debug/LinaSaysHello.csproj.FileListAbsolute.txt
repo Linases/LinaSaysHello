@@ -1,8 +1,0 @@
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\bin\Debug\LinaSaysHello.exe.config
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\bin\Debug\LinaSaysHello.exe
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\bin\Debug\LinaSaysHello.pdb
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\obj\Debug\LinaSaysHello.csproj.AssemblyReference.cache
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\obj\Debug\LinaSaysHello.csproj.SuggestedBindingRedirects.cache
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\obj\Debug\LinaSaysHello.csproj.CoreCompileInputs.cache
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\obj\Debug\LinaSaysHello.exe
-C:\Users\lina.seskiene\source\repos\LinaSaysHello\LinaSaysHello\obj\Debug\LinaSaysHello.pdb
