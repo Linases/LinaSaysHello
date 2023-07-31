@@ -67,7 +67,7 @@ namespace LinaSaysHello
             Console.WriteLine(" It took " + divisionTimes + " times to divite 2048 by 2 till it's less than 10");
 
             //  Task 5//
-            string[] words = { "yes", "no", "Other", "Words" };
+            string[] words = { "yes", "Hello", "Other", "Words" };
 
             for (int i = 0; i < words.Length; i++)
             {
@@ -86,7 +86,7 @@ namespace LinaSaysHello
             int[] arrNumbers = { 4, 6, 8, 9, 10, 11 };
             for (int i = 0; i < arrNumbers.Length; i++)
             {
-                Console.Write(arrNumbers[i] + " ");
+                Console.Write("\n "+arrNumbers[i] + " ");
             }
             Console.WriteLine("\nSum of first and last element is: " + (arrNumbers[0] += arrNumbers[arrNumbers.Length - 1]));
 
@@ -135,14 +135,10 @@ namespace LinaSaysHello
             }
             int temporar;
 
-            // traverse 0 to array length
             for (int i = 0; i < arrNumbers2.Length - 1; i++)
 
-                // traverse i+1 to array length
                 for (int j = i + 1; j < arrNumbers2.Length; j++)
 
-                    // compare array element with
-                    // all next element
                     if (arrNumbers2[i] > arrNumbers2[j])
                     {
 
@@ -151,7 +147,6 @@ namespace LinaSaysHello
                         arrNumbers2[j] = temporar;
                     }
             Console.WriteLine("\nNumbers in asccending order:");
-            // print all element of array
             foreach (int value2 in arrNumbers2)
             {
                 Console.Write(value2 + " ");
@@ -161,12 +156,13 @@ namespace LinaSaysHello
 
             for (int i = 1; i <= 10; i++)
             {
-               for (int j = 1; j <= 10; j++)
+                for (int j = 1; j <= 10; j++)
                 {
                     Console.WriteLine(i + " * " + j + " = " + (i * j));
                 }
+            }
 
-            //Task10//
+           //Task10//
 
                 int[,] array2d = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
                 Console.Write(array2d[0, 0] + " ");
@@ -202,7 +198,7 @@ namespace LinaSaysHello
 
         }
     }
-}
+
 
 
 
