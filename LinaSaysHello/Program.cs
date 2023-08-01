@@ -47,14 +47,14 @@ namespace LinaSaysHello
             int value = 1;
             for (int i = 0; i < numArray.Length; i++)
             {
-                value = value * numArray[i];
-                Console.WriteLine(value);
-            }
+                value *=numArray[i];
+               
+            } Console.WriteLine(value);
+
             // Task 4//
 
-            int number_2048 = 2048;
             int divisionTimes = 0;
-            int result = number_2048;
+            int result = 2048;
 
             do
             {
@@ -86,7 +86,7 @@ namespace LinaSaysHello
             int[] arrNumbers = { 4, 6, 8, 9, 10, 11 };
             for (int i = 0; i < arrNumbers.Length; i++)
             {
-                Console.Write("\n "+arrNumbers[i] + " ");
+                Console.Write("\n " + arrNumbers[i] + " ");
             }
             Console.WriteLine("\nSum of first and last element is: " + (arrNumbers[0] += arrNumbers[arrNumbers.Length - 1]));
 
@@ -110,22 +110,22 @@ namespace LinaSaysHello
                     min = arrNumbers1[i];
                 }
             }
-            int index1 = 0;
-            int index2 = 0;
+            int indexSum=0;
             for (int i = 0; i < arrNumbers1.Length; i++)
             {
                 if (arrNumbers1[i] == min)
                 {
                     Console.WriteLine($"\nMinumum element index : {i}");
-                    index1 = i;
+                    indexSum+=i;
+                    continue;
                 }
                 if (arrNumbers1[i] == max)
                 {
                     Console.WriteLine($"Maximum element index : {i}");
-                    index2 = i;
+                    indexSum += i;
                 }
             }
-            Console.WriteLine($"Sum of Min and Max indexes: {index1 + index2}");
+            Console.WriteLine($"Sum of Min and Max indexes: {indexSum}");
 
             //Task8//
             int[] arrNumbers2 = { 4, -6, 8, 900, 20, 11 };
@@ -133,12 +133,13 @@ namespace LinaSaysHello
             {
                 Console.Write(value1 + " ");
             }
+
             int temporar;
 
             for (int i = 0; i < arrNumbers2.Length - 1; i++)
-
+            {
                 for (int j = i + 1; j < arrNumbers2.Length; j++)
-
+                {
                     if (arrNumbers2[i] > arrNumbers2[j])
                     {
 
@@ -146,11 +147,16 @@ namespace LinaSaysHello
                         arrNumbers2[i] = arrNumbers2[j];
                         arrNumbers2[j] = temporar;
                     }
+                }
+
+            }
+
             Console.WriteLine("\nNumbers in asccending order:");
             foreach (int value2 in arrNumbers2)
             {
                 Console.Write(value2 + " ");
             }
+            Console.WriteLine();
 
             //Task 9//
 
@@ -162,42 +168,42 @@ namespace LinaSaysHello
                 }
             }
 
-           //Task10//
+            //Task10//
 
-                int[,] array2d = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-                Console.Write(array2d[0, 0] + " ");
-                Console.Write(array2d[0, 1] + " ");
-                Console.WriteLine(array2d[0, 2] + " ");
-                Console.Write(array2d[1, 0] + " ");
-                Console.Write(array2d[1, 1] + " ");
-                Console.WriteLine(array2d[1, 2] + " ");
-                Console.Write(array2d[2, 0] + " ");
-                Console.Write(array2d[2, 1] + " ");
-                Console.WriteLine(array2d[2, 2] + " ");
+            int[,] array2d = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+            Console.Write(array2d[0, 0] + " ");
+            Console.Write(array2d[0, 1] + " ");
+            Console.WriteLine(array2d[0, 2] + " ");
+            Console.Write(array2d[1, 0] + " ");
+            Console.Write(array2d[1, 1] + " ");
+            Console.WriteLine(array2d[1, 2] + " ");
+            Console.Write(array2d[2, 0] + " ");
+            Console.Write(array2d[2, 1] + " ");
+            Console.WriteLine(array2d[2, 2] + " ");
 
-                // Task 11//
-                int[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-                Array.Resize(ref array1, array1.Length + 1);
-                array1[array1.Length - 1] = 11;
+            // Task 11//
+            int[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            Array.Resize(ref array1, array1.Length + 1);
+            array1[array1.Length - 1] = 11;
 
-                int[] newArray1 = new int[] { -1 };
-                array1 = newArray1.Concat(array1).ToArray();
+            int[] newArray1 = new int[] { -1 };
+            array1 = newArray1.Concat(array1).ToArray();
 
-                int[] newArray2 = new int[] { 12 };
-                array1 = array1.Take(4).Concat(newArray2).Concat(array1.Skip(4)).ToArray();
+            int[] newArray2 = new int[] { 12 };
+            array1 = array1.Take(4).Concat(newArray2).Concat(array1.Skip(4)).ToArray();
 
-                array1 = array1.Skip(1).ToArray();
+            array1 = array1.Skip(1).ToArray();
 
-                int[] array2 = { 100, 200, 300 };
-                int[] combinedAarray = array1.Concat(array2).ToArray();
-                foreach (var item in combinedAarray)
-                {
-                    Console.Write("{0} ", item);
-                }
+            int[] array2 = { 100, 200, 300 };
+            int[] combinedAarray = array1.Concat(array2).ToArray();
+            foreach (var item in combinedAarray)
+            {
+                Console.Write("{0} ", item);
             }
-
         }
+
     }
+}
 
 
 
