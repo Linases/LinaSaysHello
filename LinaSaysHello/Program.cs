@@ -13,32 +13,35 @@ namespace LinaSaysHello
     {
         static void Main(string[] args)
         {
-            //Task1//
-            int num = 20;
-            num += 5;
+            ////Task1//
+            //var num = 20;
+            //num += 5;
 
-            Console.WriteLine("Variable:" + num);
+            //Console.WriteLine($"Variable: {num}");
 
-            //Task2//
+            ////Task2//
 
-            Console.Write("Enter a 4 digit number of days: ");
-            int number = Convert.ToInt32(Console.ReadLine());
-            int years = number / 365;
-            int months = (number - years * 365) / 30;
-            int days = (number - years * 365) - months * 30;
+            //Console.Write("Enter a 4 digit number of days: ");
+            //var number = Convert.ToInt32(Console.ReadLine());
+            //var daysInYear = 365;
+            //var daysInMonth = 30;
 
-            Console.WriteLine("This number represents: " + years + " years " + months + " months " + days + " days");
+            //int years = number / daysInYear;
+            //int months = (number - years * daysInYear) / daysInMonth;
+            //int days = (number - years * daysInYear) - months * daysInMonth;
 
-            //Task3//
-            
-            Console.Write("Enter a random number: ");
-            int randomNumber = Convert.ToInt32(Console.ReadLine());
-            int result = (randomNumber + randomNumber * 2);
-            Console.WriteLine("{0} + {1}*2 = {2}", randomNumber, randomNumber, result);
+            //Console.WriteLine($"This number represents: {years} years {months} months {days} days");
 
-            // Task 4//
+            ////Task3//
+
+            //Console.Write("Enter a random number: ");
+            //var randomNumber = Convert.ToDecimal(Console.ReadLine());
+            //var result = (randomNumber + randomNumber * 2);
+            //Console.WriteLine("{0} + {1} * 2 = {2}", randomNumber, randomNumber, result);
+
+            //Task 4//
             /*
-            //every variable can be named by var type
+            every variable can be named by var type
             sbyte num1 = -34; //small number
             int num2 = 4; // integer type number
             string word = "Hello";// word
@@ -49,9 +52,9 @@ namespace LinaSaysHello
             int num5 = 0; //integer type number
             */
 
-            //Task 5//
+           // Task 5//
             Console.Write("Enter a random number: ");
-            int randomNumber1 = Convert.ToInt32(Console.ReadLine());
+            var randomNumber1 = Convert.ToDouble(Console.ReadLine());
             if (randomNumber1 % 2 == 0)
             {
                 Console.WriteLine(randomNumber1 + " is an even number");
