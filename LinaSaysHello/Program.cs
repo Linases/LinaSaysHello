@@ -23,47 +23,48 @@ namespace LinaSaysHello
             Console.Write("Enter one aritmetic operation: +, -, *, /");
             char aritmeticOperation = Convert.ToChar(Console.ReadLine());
 
+
             switch (aritmeticOperation)
             {
                 case '+':
                     {
-                        Console.WriteLine("{ 0} + { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                        int result = enteredNr1 + enteredNr2;
+                        Console.WriteLine("{0} + {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
-
                 case '-':
                     {
-                        Console.WriteLine("{ 0} - { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                        int result = enteredNr1 - enteredNr2;
+                        Console.WriteLine("{0} - {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
                 case '*':
                     {
-                        Console.WriteLine("{ 0} * { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                        int result = enteredNr1 * enteredNr2;
+                        Console.WriteLine("{0} * {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
                 case '/':
                     {
-                        Console.WriteLine("{ 0} / { 1} = {2}", enteredNr1, enteredNr2, aritmeticOperation);
+                        int result = enteredNr1 / enteredNr2;
+                        Console.WriteLine("{0} / {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
-                default :
+                default:
                     Console.WriteLine("Operation is not present in the list of allowed operations");
                     break;
             }
-        
+
 
             //Task 2//
+            
             Console.Write("Enter a random number: ");
             int a = Convert.ToInt32(Console.ReadLine());
             if (a == 0 || a == 15)
             {
                 Console.WriteLine("Partly working!");
             }
-            else if (a != 37)
-            {
-                Console.WriteLine("Working!");
-            }
-            else if (a < 50 || a >= 32)
+            else if (a < 50 && a != 37 && a >= 32)
             {
                 Console.WriteLine("Working!");
             }
@@ -72,7 +73,7 @@ namespace LinaSaysHello
                 Console.WriteLine("Does’t work");
             }
 
-            //Task 3//
+           // Task 3//
             Console.Write("Enter a random number: ");
             int randomNumber1 = Convert.ToInt32(Console.ReadLine());
             String result1 = (randomNumber1 % 2 == 0) ? "even number" : "odd number";
