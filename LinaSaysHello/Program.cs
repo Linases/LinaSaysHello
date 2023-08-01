@@ -15,38 +15,37 @@ namespace LinaSaysHello
         {
             //Task 1//
             Console.Write("Enter first number: ");
-            int enteredNr1 = Convert.ToInt32(Console.ReadLine());
+            var enteredNr1 = Convert.ToDecimal(Console.ReadLine());
 
             Console.Write("Enter second number: ");
-            int enteredNr2 = Convert.ToInt32(Console.ReadLine());
+            var enteredNr2 = Convert.ToDecimal(Console.ReadLine());
 
             Console.Write("Enter one aritmetic operation: +, -, *, /");
             char aritmeticOperation = Convert.ToChar(Console.ReadLine());
-
 
             switch (aritmeticOperation)
             {
                 case '+':
                     {
-                        int result = enteredNr1 + enteredNr2;
+                        var result = enteredNr1 + enteredNr2;
                         Console.WriteLine("{0} + {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
                 case '-':
                     {
-                        int result = enteredNr1 - enteredNr2;
+                        var result = enteredNr1 - enteredNr2;
                         Console.WriteLine("{0} - {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
                 case '*':
                     {
-                        int result = enteredNr1 * enteredNr2;
+                        var result = enteredNr1 * enteredNr2;
                         Console.WriteLine("{0} * {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
                 case '/':
                     {
-                        int result = enteredNr1 / enteredNr2;
+                        var result = enteredNr1 / enteredNr2;
                         Console.WriteLine("{0} / {1} = {2}", enteredNr1, enteredNr2, result);
                     }
                     break;
@@ -55,11 +54,10 @@ namespace LinaSaysHello
                     break;
             }
 
-
             //Task 2//
-            
+
             Console.Write("Enter a random number: ");
-            int a = Convert.ToInt32(Console.ReadLine());
+            var a = Convert.ToDecimal(Console.ReadLine());
             if (a == 0 || a == 15)
             {
                 Console.WriteLine("Partly working!");
@@ -73,14 +71,13 @@ namespace LinaSaysHello
                 Console.WriteLine("Does’t work");
             }
 
-           // Task 3//
+            // Task 3//
             Console.Write("Enter a random number: ");
-            int randomNumber1 = Convert.ToInt32(Console.ReadLine());
+            var randomNumber1 = Convert.ToDecimal(Console.ReadLine());
             String result1 = (randomNumber1 % 2 == 0) ? "even number" : "odd number";
             Console.WriteLine("{0} is {1}", randomNumber1, result1);
 
             Console.ReadLine();
-
         }
     }
 }
