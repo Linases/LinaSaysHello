@@ -26,9 +26,9 @@ namespace LinaSaysHello
             var daysInYear = 365;
             var daysInMonth = 30;
 
-            int years = number / daysInYear;
-            int months = (number - years * daysInYear) / daysInMonth;
-            int days = (number - years * daysInYear) - months * daysInMonth;
+            var years = number / daysInYear;
+            var months = (number - years * daysInYear) / daysInMonth;
+            var days = (number - years * daysInYear) - months * daysInMonth;
 
             Console.WriteLine($"This number represents: {years} years {months} months {days} days");
 
@@ -54,7 +54,7 @@ namespace LinaSaysHello
 
             //Task 5//
             Console.Write("Enter a random number: ");
-            var randomNumber1 = Convert.ToInt32(Console.ReadLine());
+            var randomNumber1 = Convert.ToDecimal(Console.ReadLine());
             if (randomNumber1 % 2 == 0)
             {
                 Console.WriteLine(randomNumber1 + " is an even number");
