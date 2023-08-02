@@ -164,8 +164,11 @@ namespace LinaSaysHello
             {
                 for (int j = 1; j <= 10; j++)
                 {
-                    Console.WriteLine(i + " * " + j + " = " + (i * j));
+                    // Console.Write(i + " * " + j + " = " + (i * j));
+                    sum = i * j;
+                    Console.Write($"{i}*{j}={sum}\t");
                 }
+                Console.WriteLine();
             }
 
             //Task10//
