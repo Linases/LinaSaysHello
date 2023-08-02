@@ -14,45 +14,45 @@ namespace LinaSaysHello
         static void Main(string[] args)
         {
             //Task 1//
-            Console.Write("Enter first number: ");
-            var enteredNr1 = Convert.ToDecimal(Console.ReadLine());
+            //Console.Write("Enter first number: ");
+            //var enteredNr1 = Convert.ToDecimal(Console.ReadLine());
 
-            Console.Write("Enter second number: ");
-            var enteredNr2 = Convert.ToDecimal(Console.ReadLine());
+            //Console.Write("Enter second number: ");
+            //var enteredNr2 = Convert.ToDecimal(Console.ReadLine());
 
-            Console.Write("Enter one aritmetic operation: +, -, *, /");
-            char aritmeticOperation = Convert.ToChar(Console.ReadLine());
+            //Console.Write("Enter one aritmetic operation: +, -, *, /");
+            //char aritmeticOperation = Convert.ToChar(Console.ReadLine());
 
-            switch (aritmeticOperation)
-            {
-                case '+':
-                    {
-                        var result = enteredNr1 + enteredNr2;
-                        Console.WriteLine("{0} + {1} = {2}", enteredNr1, enteredNr2, result);
-                    }
-                    break;
-                case '-':
-                    {
-                        var result = enteredNr1 - enteredNr2;
-                        Console.WriteLine("{0} - {1} = {2}", enteredNr1, enteredNr2, result);
-                    }
-                    break;
-                case '*':
-                    {
-                        var result = enteredNr1 * enteredNr2;
-                        Console.WriteLine("{0} * {1} = {2}", enteredNr1, enteredNr2, result);
-                    }
-                    break;
-                case '/':
-                    {
-                        var result = enteredNr1 / enteredNr2;
-                        Console.WriteLine("{0} / {1} = {2}", enteredNr1, enteredNr2, result);
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Operation is not present in the list of allowed operations");
-                    break;
-            }
+            //switch (aritmeticOperation)
+            //{
+            //    case '+':
+            //        {
+            //            var result = enteredNr1 + enteredNr2;
+            //            Console.WriteLine("{0} + {1} = {2}", enteredNr1, enteredNr2, result);
+            //        }
+            //        break;
+            //    case '-':
+            //        {
+            //            var result = enteredNr1 - enteredNr2;
+            //            Console.WriteLine("{0} - {1} = {2}", enteredNr1, enteredNr2, result);
+            //        }
+            //        break;
+            //    case '*':
+            //        {
+            //            var result = enteredNr1 * enteredNr2;
+            //            Console.WriteLine("{0} * {1} = {2}", enteredNr1, enteredNr2, result);
+            //        }
+            //        break;
+            //    case '/':
+            //        {
+            //            var result = enteredNr1 / enteredNr2;
+            //            Console.WriteLine("{0} / {1} = {2}", enteredNr1, enteredNr2, result);
+            //        }
+            //        break;
+            //    default:
+            //        Console.WriteLine("Operation is not present in the list of allowed operations");
+            //        break;
+            //}
 
             //Task 2//
 
