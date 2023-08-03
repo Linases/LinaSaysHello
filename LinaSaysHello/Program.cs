@@ -15,7 +15,7 @@ namespace LinaSaysHello
         {
             //Task 1//
             Console.Write("Enter first number: ");
-            var enteredNr1 = Convert.ToDecimal(Console.ReadLine());
+            var enteredNumber1 = Convert.ToDecimal(Console.ReadLine());
 
             Console.Write("Enter second number: ");
             var enteredNr2 = Convert.ToDecimal(Console.ReadLine());
@@ -27,26 +27,26 @@ namespace LinaSaysHello
             {
                 case '+':
                     {
-                        var result = enteredNr1 + enteredNr2;
-                        Console.WriteLine("{0} + {1} = {2}", enteredNr1, enteredNr2, result);
+                        var result11 = enteredNumber1 + enteredNr2;
+                        Console.WriteLine("{0} + {1} = {2}", enteredNumber1, enteredNr2, result11);
                     }
                     break;
                 case '-':
                     {
-                        var result = enteredNr1 - enteredNr2;
-                        Console.WriteLine("{0} - {1} = {2}", enteredNr1, enteredNr2, result);
+                        var result11 = enteredNumber1 - enteredNr2;
+                        Console.WriteLine("{0} - {1} = {2}", enteredNumber1, enteredNr2, result11);
                     }
                     break;
                 case '*':
                     {
-                        var result = enteredNr1 * enteredNr2;
-                        Console.WriteLine("{0} * {1} = {2}", enteredNr1, enteredNr2, result);
+                        var result11 = enteredNumber1 * enteredNr2;
+                        Console.WriteLine("{0} * {1} = {2}", enteredNumber1, enteredNr2, result11);
                     }
                     break;
                 case '/':
                     {
-                        var result = enteredNr1 / enteredNr2;
-                        Console.WriteLine("{0} / {1} = {2}", enteredNr1, enteredNr2, result);
+                        var result11 = enteredNumber1 / enteredNr2;
+                        Console.WriteLine("{0} / {1} = {2}", enteredNumber1, enteredNr2, result11);
                     }
                     break;
                 default:
@@ -115,14 +115,14 @@ namespace LinaSaysHello
 
             //Task 5//
             Console.Write("Enter a random number: ");
-            var randomNumber1 = Convert.ToDecimal(Console.ReadLine());
-            if (randomNumber1 % 2 == 0)
+            var randomNumber12 = Convert.ToDecimal(Console.ReadLine());
+            if (randomNumber12 % 2 == 0)
             {
-                Console.WriteLine(randomNumber1 + " is an even number");
+                Console.WriteLine(randomNumber12 + " is an even number");
             }
             else
             {
-                Console.WriteLine(randomNumber1 + " is an odd number ");
+                Console.WriteLine(randomNumber12 + " is an odd number ");
             }
             Console.ReadLine();
             Console.ReadLine();
