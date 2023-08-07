@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Eventing.Reader;
 using System.IO.Ports;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -20,16 +21,20 @@ namespace LinaSaysHello
         static void Main(string[] args)
         {
             //Task 1//
-            Console.Write("Enter any positive number: ");
-            int number = Convert.ToInt32(Console.ReadLine());
+            var number = 0;
             int sum = 0;
+
+            while (number <= 0)
+            {
+                Console.Write("Enter any positive number: ");
+                number = Convert.ToInt32(Console.ReadLine());
+            }
+
             for (int i = 1; i <= number; i++)
             {
                 sum += i;
-
+                Console.WriteLine("Result: " + sum);
             }
-            Console.WriteLine("Result: " + sum);
-
             //Task2//
 
             int number_3 = 3;
@@ -47,42 +52,39 @@ namespace LinaSaysHello
             int value = 1;
             for (int i = 0; i < numArray.Length; i++)
             {
-                value *=numArray[i];
-               
-            } Console.WriteLine(value);
+                value *= numArray[i];
+            }
+            Console.WriteLine(value);
 
-            // Task 4//
+            //Task 4//
 
             int divisionTimes = 0;
             int result = 2048;
-
             do
             {
                 divisionTimes++;
                 result /= 2;
                 Console.WriteLine("Number after division: " + result);
             }
-            while (result > 10);
-
+            while (result >= 10);
             Console.WriteLine(" It took " + divisionTimes + " times to divite 2048 by 2 till it's less than 10");
 
-            //  Task 5//
+            //Task 5//
             string[] words = { "yes", "Hello", "Other", "Words" };
 
             for (int i = 0; i < words.Length; i++)
             {
                 Console.WriteLine(words[i] + " ");
-
             }
             for (int i = 0; i < words.Length; i++)
             {
                 if (words[i] == "Hello")
                 {
                     Console.Write("\nLabas! ");
-                    continue;
+                    break;
                 }
             }
-            // Task 6//
+            //Task 6//
             int[] arrNumbers = { 4, 6, 8, 9, 10, 11 };
             for (int i = 0; i < arrNumbers.Length; i++)
             {
@@ -90,33 +92,45 @@ namespace LinaSaysHello
             }
             Console.WriteLine("\nSum of first and last element is: " + (arrNumbers[0] += arrNumbers[arrNumbers.Length - 1]));
 
-            //   Task7//
-            int[] arrNumbers1 = { -10, 20, 100, 1000 };
-
-            for (int i = 0; i < arrNumbers1.Length; i++)
-            {
-                Console.Write(arrNumbers1[i] + " ");
-            }
+           // Task7//
+            int[] arrNumbers1 = { -100, 20, 1000, 100 };
+            int indexOfMaxArrayValue = 0;
+            int indexOfMinArrayValue = 0;
             int max = arrNumbers1[0];
             int min = arrNumbers1[0];
             for (int i = 0; i < arrNumbers1.Length; i++)
             {
+                Console.Write(arrNumbers1[i] + " ");
                 if (arrNumbers1[i] > max)
                 {
                     max = arrNumbers1[i];
+                    indexOfMaxArrayValue = i;
                 }
                 if (arrNumbers1[i] < min)
                 {
                     min = arrNumbers1[i];
+                    indexOfMinArrayValue = i;
                 }
             }
-            int indexSum=0;
+            //if there are the same numbers in array?
+            //for (int i = 0; i < arrNumbers1.Length; i++) 
+            //{
+            //    if (arrNumbers1[i] > max)
+            //    {
+            //        max = arrNumbers1[i];
+            //    }
+            //    if (arrNumbers1[i] < min)
+            //    {
+            //        min = arrNumbers1[i];
+            //    }
+            //}
+            int indexSum = 0;
             for (int i = 0; i < arrNumbers1.Length; i++)
             {
                 if (arrNumbers1[i] == min)
                 {
                     Console.WriteLine($"\nMinumum element index : {i}");
-                    indexSum+=i;
+                    indexSum += i;
                     continue;
                 }
                 if (arrNumbers1[i] == max)
@@ -127,30 +141,25 @@ namespace LinaSaysHello
             }
             Console.WriteLine($"Sum of Min and Max indexes: {indexSum}");
 
-            //Task8//
+           // Task8//
             int[] arrNumbers2 = { 4, -6, 8, 900, 20, 11 };
             foreach (int value1 in arrNumbers2)
             {
                 Console.Write(value1 + " ");
             }
-
             int temporar;
-
             for (int i = 0; i < arrNumbers2.Length - 1; i++)
             {
                 for (int j = i + 1; j < arrNumbers2.Length; j++)
                 {
                     if (arrNumbers2[i] > arrNumbers2[j])
                     {
-
                         temporar = arrNumbers2[i];
                         arrNumbers2[i] = arrNumbers2[j];
                         arrNumbers2[j] = temporar;
                     }
                 }
-
             }
-
             Console.WriteLine("\nNumbers in asccending order:");
             foreach (int value2 in arrNumbers2)
             {
@@ -159,31 +168,33 @@ namespace LinaSaysHello
             Console.WriteLine();
 
             //Task 9//
-
+            int sum1 = 0;
             for (int i = 1; i <= 10; i++)
             {
                 for (int j = 1; j <= 10; j++)
                 {
-                    sum = i * j;
-                    Console.Write($"{i}*{j}={sum}\t");
+                    sum1 = i * j;
+                    Console.Write($"{i}*{j}={sum1}\t");
                 }
                 Console.WriteLine();
             }
 
-            //Task10//
+           // Task10//
 
             int[,] array2d = new int[3, 3] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-            Console.Write(array2d[0, 0] + " ");
-            Console.Write(array2d[0, 1] + " ");
-            Console.WriteLine(array2d[0, 2] + " ");
-            Console.Write(array2d[1, 0] + " ");
-            Console.Write(array2d[1, 1] + " ");
-            Console.WriteLine(array2d[1, 2] + " ");
-            Console.Write(array2d[2, 0] + " ");
-            Console.Write(array2d[2, 1] + " ");
-            Console.WriteLine(array2d[2, 2] + " ");
+            int rowLength = array2d.GetLength(0);
+            int colLength = array2d.GetLength(1);
 
-            // Task 11//
+            for (int i = 0; i < rowLength; i++)
+            {
+                for (int j = 0; j < colLength; j++)
+                {
+                    Console.Write(array2d[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            
+            //Task 11//
             int[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             Array.Resize(ref array1, array1.Length + 1);
             array1[array1.Length - 1] = 11;
