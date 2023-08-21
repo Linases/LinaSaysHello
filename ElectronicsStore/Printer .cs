@@ -7,26 +7,23 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class Printer : ISwitch
+    public class Printer : ElectricalDevice, IPrintOnPaper
     {
-        private int paperWidth;
-        private int paperHeight;
-        private string? modelName;
-        private decimal price;
+        public int PaperWidth { get; set; }
+        public int PaperHeight { get; set; }
 
-        public Printer(string? modelName, decimal price, int paperWidth, int paperHeight)
+        public Printer(string? modelName, decimal price, int paperWidth, int paperHeight) : base(modelName, price)
         {
-            this.modelName = modelName;
-            this.price = price;
-            this.paperWidth = paperWidth;
-            this.paperHeight = paperHeight;
+
+            PaperWidth = paperWidth;
+            PaperHeight = paperHeight;
         }
 
-        public string Description
+        public override string Description
         {
             get
             {
-                return $"Price: {price}, model:{modelName}";
+                return $"Price: {Price}, model:{ModelName}";
             }
         }
 
@@ -35,14 +32,5 @@ namespace AqaLabHomeworkFilesStorage.Task7
             Console.WriteLine("Printing...");
         }
 
-        public void TurnOn()
-        {
-            Console.WriteLine("Press button at the top");
-        }
-
-        public void TunrnOff()
-        {
-            Console.WriteLine("Press Turn Off button");
-        }
     }
 }

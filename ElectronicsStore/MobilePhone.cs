@@ -7,24 +7,20 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class MobilePhone : ISwitch
+    public class MobilePhone : ElectricalDevice, ITakePhoto
     {
-        private double numberOfPixelsInCamera;
-        private string? modelName;
-        private decimal price;
+        public double NumberOfPixelsInCamera { get; set; }
 
-        public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price)
+        public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price) : base(modelName, price)
         {
-            this.numberOfPixelsInCamera = numberOfPixelsInCamera;
-            this.modelName = modelName;
-            this.price = price;
+            NumberOfPixelsInCamera = numberOfPixelsInCamera;
         }
 
-        public string Description
+        public override string Description
         {
             get
             {
-                return $"Price: {price}, model:{modelName}, number of pixels in camera: {numberOfPixelsInCamera}";
+                return $"Price: {Price}, model:{ModelName}, number of pixels in camera: {NumberOfPixelsInCamera}";
             }
         }
 
@@ -33,14 +29,5 @@ namespace AqaLabHomeworkFilesStorage.Task7
             Console.WriteLine("Press button on the screen and photo is ready");
         }
 
-        public void TurnOn()
-        {
-            Console.WriteLine("Press left side button");
-        }
-
-        public void TunrnOff()
-        {
-            Console.WriteLine("Press Turn Off button");
-        }
     }
 }

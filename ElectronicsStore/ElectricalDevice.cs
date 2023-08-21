@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace ElectronicsStore
 {
-    public abstract class AbstractClass
+    public abstract class ElectricalDevice : ISwitch
     {
-        public void Print()
+
+        protected string? ModelName;
+        protected decimal Price;
+
+        public ElectricalDevice (string? modelName, decimal price)
         {
-            Console.WriteLine("Printing...");
+            ModelName = modelName;
+            Price = price;
         }
+
+        public abstract string Description { get; }
+    
 
         public void TurnOn()
         {

@@ -7,28 +7,26 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class Polaroid : AbstractClass
+    public class Polaroid : ElectricalDevice, ITakePhoto, IPrintOnPaper
     {
-        private int paperWidth;
-        private int paperHeight;
-        private double numberOfPixelsInCamera;
-        private string? modelName;
-        private decimal price;
+        public int PaperWidth { get; set; }
+        public int PaperHeight { get; set; }
 
-        public Polaroid(int paperWidth, int paperHeight, double numberOfPixelsInCamera, string? modelName, decimal price)
+        public double NumberOfPixelsInCamera { get; set; }
+
+        public Polaroid(int paperWidth, int paperHeight, double numberOfPixelsInCamera, string? modelName, decimal price): base (modelName, price)
         {
-            this.paperWidth = paperWidth;
-            this.paperHeight = paperHeight;
-            this.numberOfPixelsInCamera = numberOfPixelsInCamera;
-            this.modelName = modelName;
-            this.price = price;
+            PaperWidth = paperWidth;
+            PaperHeight = paperHeight;
+            NumberOfPixelsInCamera = numberOfPixelsInCamera;
+
         }
 
-        public string Description
+        public override string Description
         {
             get
             {
-                return $"Price: {price}, model:{modelName}, number of pixels in camera: {numberOfPixelsInCamera}";
+                return $"Price: {Price}, model:{ModelName}, number of pixels in camera: {NumberOfPixelsInCamera}";
             }
         }
 
@@ -40,16 +38,6 @@ namespace AqaLabHomeworkFilesStorage.Task7
         public void Print()
         {
             Console.WriteLine("Printing...");
-        }
-
-        public void TurnOn()
-        {
-            Console.WriteLine("Press right side button");
-        }
-
-        public void TunrnOff()
-        {
-            Console.WriteLine("Press Turn Off button");
         }
     }
 }
