@@ -8,9 +8,11 @@ namespace BankUsers
 {
     public class OfficeWorker : Employee
     {
-        public OfficeWorker (string firstName, string lastName, int age) : base(firstName, lastName, age)
+        public OfficeWorkerTypes.OfficeWorker OfficeWorkerType { get; set; }
+        public OfficeWorker (string firstName, string lastName, int age, OfficeWorkerTypes.OfficeWorker officeWorkerType) : base(firstName, lastName, age)
         {
-
+            OfficeWorkerType = officeWorkerType;
         }
+
     }
 }

@@ -14,22 +14,23 @@ internal class Program
 
         Console.WriteLine(employee.IsEmployeeofTheMonth());
 
-        Employee.EmployeeOfTheMonth = employee;
-        
+       // employee.IsEmployeeofTheMonth();
+
         Console.WriteLine(employee.IsEmployeeofTheMonth());
         Console.WriteLine($"{employee.FirstName} {employee.LastName} {employee.Age}");
-        //employee.Quit();
+        employee.Quit();
 
         Manager manager = new Manager("ManagerName", "ManagerLastname", 22);
         //manager.Fire(employee);
-        
+
         if (employee is Manager)
         {
             ((Manager)employee).Fire(employee);
         }
 
-        employee.DoWork();
-        manager.DoWork();
+        OfficeWorker officeworker = new OfficeWorker("Name", "LastName", 25, OfficeWorkerTypes.OfficeWorker.LoanSpecialist );
+        Console.WriteLine($" Client name: {officeworker.FirstName}, client Last Name: {officeworker.LastName}, Client age: {officeworker.Age}, type: {officeworker.OfficeWorkerType}");
+
     }
 
 

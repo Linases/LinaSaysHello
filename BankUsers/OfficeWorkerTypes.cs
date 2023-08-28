@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace BankUsers
 {
-    public class FinancialAnalyst : OfficeWorker
+    public class OfficeWorkerTypes
     {
-        public FinancialAnalyst(string firstName, string lastName, int age) : base(firstName, lastName, age)
+        public enum OfficeWorker
         {
+          LoanSpecialist,
+          FinancialAnalyst
 
         }
     }

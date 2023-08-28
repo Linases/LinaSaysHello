@@ -13,7 +13,7 @@ namespace BankUsers
 
         public Client(string firstName, string lastName, int age, bool isVipClient=false) : base(firstName, lastName, age)
         {
-            IsVipOneClient = false;
+            IsVipOneClient = isVipClient;
         }
 
         public void TakeLoan()
