@@ -15,7 +15,27 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Task_6._1
-{ 
+        {
+            _accountBalance += depositAmount;
+        }
+
+        public void Withdraw(decimal withdrawAmount)
+        {
+            if (_accountBalance >= withdrawAmount)
+            {
+                _accountBalance -= withdrawAmount;
+            }
+            else
+            {
+                Console.WriteLine($"Insufficient funds in account: {AccountNumber}");
+            }
+        }
+
+        public string GetAccountInfo()
+        {
+            return $" {_accountBalance}, {_accountNumber}";
+        }
+    }
 
     internal class Program
     {
@@ -32,6 +52,7 @@ namespace Task_6._1
             Console.WriteLine("firstAccount: " + firstAccount.GetAccountInfo());
             Console.WriteLine("secondAccount: " + secondAccount.GetAccountInfo());
             Console.WriteLine("thirdAccount: " + thirdAccount.GetAccountInfo());
+
         }
 
     }
