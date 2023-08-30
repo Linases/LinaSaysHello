@@ -9,9 +9,17 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        GenericArray<string> array = new GenericArray<string>(3);
+        GenericArray<string> array = new GenericArray<string>(5);
         array.AddObject("one");
         array.AddObject("two");
-        
+        array.AddObject("three");
+
+        array.CountObjects();
+        Console.WriteLine(array.CountObjects());
+        Console.WriteLine(array.GetItemByIndex(0));
+
+       array.Delete (array,0);
+
+
     }
 }

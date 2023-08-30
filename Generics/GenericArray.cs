@@ -11,10 +11,12 @@ namespace Generics
     {
         private T[] array;
         private int count;
+        private int index;
         public GenericArray(int length)
         {
             array = new T[length];
             count = 0;
+            index = 0;
         }
 
         public void AddObject(T item)
@@ -27,36 +29,26 @@ namespace Generics
                     count++;
                     return;
                 }
-                else
-                {
-                    Console.WriteLine("Not possible to add. Array is already full.");
-                }
             }
         }
-        public void RemoveObject<T>(ref T[] arr, int index)
+
+        public void Delete(T[] array, int index)
         {
-            for (int i = index; i < arr.Length - 1; i++)
+            for (int i = index; i < array.Length - 1; i++)
             {
-
-                arr[i] = arr[i + 1];
+                array[i] = array[i + 1];
             }
-            Array.Resize(ref arr, arr.Length - 1);
+            Array.Resize(ref array, array.Length - 1);
+
+            Console.WriteLine(String.Join(", ", array));
         }
-
-
         public T GetItemByIndex(int index)
         {
             {
                 return array[index];
             }
-
-
-
-
         }
         public int CountObjects() => count;
-
-
     }
 }
 
