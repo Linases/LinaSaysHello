@@ -10,37 +10,26 @@ namespace Generics
 
     {
         private T[] array;
-        private int count;
-        private int index;
-        public GenericArray(int length)
+       
+        public GenericArray()
         {
-            array = new T[length];
-            count = 0;
-            index = 0;
+            array = new T[0];
         }
 
         public void AddObject(T item)
         {
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == null)
-                {
-                    array[i] = item;
-                    count++;
-                    return;
-                }
-            }
+            Array.Resize(ref array, array.Length + 1);
+            array[array.Length - 1] = item;
+            
         }
 
-        public void Delete(T[] array, int index)
+        public void Delete(int index)
         {
             for (int i = index; i < array.Length - 1; i++)
             {
                 array[i] = array[i + 1];
             }
             Array.Resize(ref array, array.Length - 1);
-
-            Console.WriteLine(String.Join(", ", array));
         }
         public T GetItemByIndex(int index)
         {
@@ -48,7 +37,12 @@ namespace Generics
                 return array[index];
             }
         }
-        public int CountObjects() => count;
+        public int CountObjects() => array.Length;
+
+        public override string ToString()
+        {
+            return String.Join(", ", array);
+        }
     }
 }
 
