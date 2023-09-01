@@ -154,7 +154,6 @@ internal class Program
             totalPopulation += kvp.Value.Population;
         }
         Console.WriteLine("Total Population of All Cities: " + totalPopulation);
-            
     }
 }
 
