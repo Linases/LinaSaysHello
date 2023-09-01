@@ -8,13 +8,13 @@ namespace Collections
 {
     internal class City
     {
-        public int population;
-        public double area;
+        public int Population;
+        public double Area;
 
         public City (int population, double area)
         {
-            this.population = population;
-            this.area = area;
+            this.Population = population;
+            this.Area = area;
         }   
     }
 
