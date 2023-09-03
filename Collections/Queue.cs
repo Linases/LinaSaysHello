@@ -30,7 +30,7 @@ namespace Collections
             return maxValue;
         }
 
-        public static void DeleteMaxValue(Queue<int> queue)
+        public static Queue<int> DeleteMaxValue(Queue<int> queue)
         {
             if (queue.Count == 0)
             {
@@ -42,13 +42,14 @@ namespace Collections
             Queue<int> newQueue = new Queue<int>();
             foreach (int value in queue)
             {
-                if (!queue.Contains (maxValue))
+                if (value!=maxValue)
                 {
                     newQueue.Enqueue(value);
                     Console.WriteLine(newQueue);
                 }
                
             }
+            return newQueue;
           
         }
     }
