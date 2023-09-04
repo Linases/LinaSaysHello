@@ -31,28 +31,60 @@ internal class Program
         {
             Console.Write(s + " ");
         }
+        Console.WriteLine();
         //3//
         int[] array = new int[4] { 9, 8, 6, 5 };
+        var sqrNumbers = from s in array
+                         select "{ Number = " + s + ", SqrNo = " + (s * s) + " }";
+        foreach (var s in sqrNumbers)
+        {
+            Console.WriteLine(s);
+        }
         Console.WriteLine();
         //4//
         int[] array2 = new int[6] { 5, 5, 5, 9, 9, 1 };
 
         var totalFives = array2.Count(s => s == 5);
         var totalNines = array2.Count(s => s == 9);
-        var totalOnes = array2.Count(s =>s == 1);
+        var totalOnes = array2.Count(s => s == 1);
 
         Console.WriteLine("The number and the Frequency are: ");
         Console.WriteLine("Number 5 appeares {0} times ", totalFives);
         Console.WriteLine("Number 9 appeares {0} times ", totalNines);
         Console.WriteLine("Number 1 appeares {0} times ", totalOnes);
 
+        //5//
         List<string> cities = new List<string>() { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
-        var startsA = cities.FirstOrDefault(s => s.Contains('A'));
-        //var endsM = cities.LastOrDefault(s => s.Contains('M'));
 
-       Console.WriteLine("Cities starts with 'A' and ends with 'M':{0}", startsA);
+        var startsAEndsM = cities.FirstOrDefault(s => s.StartsWith('A') && s.EndsWith('M'));
+        
 
-      
+        Console.WriteLine("Cities starts with 'A' and ends with 'M':{0}", startsAEndsM);
+        //6//
+
+        Console.WriteLine();
+        //7// 
+        List<string> cities2 = new List<string>() { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
+
+        var orderedList = from c in cities2
+                          orderby c.Count(), c
+                          select c;
+
+        foreach (string s in orderedList)
+        {
+            Console.WriteLine(s);
+        }
+        Console.WriteLine();
+        //8//
+        List<string> foods = new List<string>() { "Honey", "Butter", "Butter", "Butter", "Honey", "Brade", "Biscuit", "Biscuit" };
+        var orderByAscending = from s in foods.Distinct()
+                               orderby s
+                               select s;
+        foreach (string s in orderByAscending)
+        {
+            Console.WriteLine(s);
+        }
+
 
     }
 }
