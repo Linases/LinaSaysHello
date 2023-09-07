@@ -6,7 +6,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //List//
+        Console.WriteLine("--------------List-----------------");
         List<int> intList = new List<int>() { 5, 10, 12, 8, 7, 9, 45, 96, 36, 15 };
         Console.WriteLine(ListsTask.SumOfEvenNumbers(intList));
 
@@ -17,7 +17,7 @@ internal class Program
         ListsTask.OutputWords(strings, enteredNr);
         Console.WriteLine();
 
-        // LinkedList// 
+        Console.WriteLine("--------------LinkedList.1-----------------");
 
         LinkedList<int> linkedList = new LinkedList<int>(new int[] { 1, 2, 3, 4, 5, 3 });
         int firstItem = 3;
@@ -37,17 +37,42 @@ internal class Program
         {
             Console.Write(str + " ");
         }
+        Console.WriteLine("\n--------------LinkedList.2-----------------");
+        LinkedList<int> list1 = new LinkedList<int>(new[] { 1, 3, 4, 7, 12 });
+        foreach (int str in list1)
+        { Console.Write(str + " ");}
+        Console.WriteLine();
+        LinkedList<int> list2 = new LinkedList<int>(new[] { 1, 5, 7, 9 });
+        foreach (int str in list2)
+        { Console.Write(+str + " "); }
 
-        List<int> list1 = new List<int> { 1, 3, 4, 7, 12 };
-        List<int> list2 = new List<int> { 1, 5, 7, 9 };
+        LinkedList<int> mergedList = new LinkedList<int>();
+        Dictionary<int, bool> numDict = new Dictionary<int, bool>();
 
-        List<int> mergedList = LinkedListTask.MergeCommonElements(list1, list2);
-        Console.WriteLine("\nMerged list with common elements: " + string.Join(" ", mergedList));
+        foreach (int num in list1)
+        {
+            numDict[num] = true;
+        }
 
-        //Queue//
+        foreach (int num in list2)
+        {
+            if (numDict.ContainsKey(num))
+            {
+                mergedList.AddLast(num);
+            }
+        }
+
+        Console.WriteLine("\nMerged List:");
+
+        foreach (int num in mergedList)
+        {
+            Console.Write(num);
+        }
+
+        Console.WriteLine("\n--------------Queue-----------------");
         Queue<int> numbers = new Queue<int>();
 
-        Console.Write("Enter several numbers to the queue. Write 'ok' to finish queue:");
+        Console.Write("\nEnter several numbers to the queue. Write 'ok' to finish queue:");
 
         try
         {
