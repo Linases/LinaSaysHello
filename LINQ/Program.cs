@@ -15,13 +15,13 @@ internal class Program
         var devidedByTwo = from s in ints
                            where s % 2 == 0
                            select s;
-        devidedByTwo.ToList().ForEach(s=> Console.Write(s + " "));
-    
+        devidedByTwo.ToList().ForEach(s => Console.Write(s + " "));
+
         Console.WriteLine("\n..............Task 2...............");
 
         List<int> ints2 = new List<int>() { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
         var positiveNumbers = from s in ints2
-                              where s > 0 && s <12
+                              where s > 0 && s < 12
                               select s;
         positiveNumbers.ToList().ForEach(s => Console.Write(s + " "));
 
@@ -31,19 +31,20 @@ internal class Program
         var sqrNumbers = from s in array
                          select "{ Number = " + s + ", SqrNo = " + (s * s) + " }";
         sqrNumbers.ToList().ForEach(s => Console.WriteLine(s + " "));
-       
+
         Console.WriteLine("..............Task 4...............");
 
         int[] array2 = new int[6] { 5, 5, 5, 9, 9, 1 };
+        List<int> valuesToCheck = new List<int> { 5, 9, 1 };
 
-        var totalFives = array2.Count(s => s == 5);
-        var totalNines = array2.Count(s => s == 9);
-        var totalOnes = array2.Count(s => s == 1);
+        Dictionary<int, int> numbersFrequency = valuesToCheck.ToDictionary(
+                value => value,
+                value => array2.Count(number => number == value)
+            );
 
         Console.WriteLine("The number and the Frequency are: ");
-        Console.WriteLine("Number 5 appeares {0} times ", totalFives);
-        Console.WriteLine("Number 9 appeares {0} times ", totalNines);
-        Console.WriteLine("Number 1 appeares {0} times ", totalOnes);
+        numbersFrequency.ToList().ForEach(s => Console.WriteLine($"Number {s.Key} appears {s.Value} times"));
+    
 
         Console.WriteLine("..............Task 5...............");
         List<string> cities = new List<string>() { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
@@ -52,8 +53,8 @@ internal class Program
 
 
         Console.WriteLine("Cities starts with 'A' and ends with 'M':{0}", startsAEndsM);
-        Console.WriteLine("..............Task 6...............");
 
+        Console.WriteLine("..............Task 6...............");
 
         List<int> intsList = new List<int> { 5, 7, 13, 24, 6, 9, 8, 7 };
         Console.WriteLine("The members of the list are: ");
@@ -88,17 +89,13 @@ internal class Program
 
         List<string> cities2 = new List<string>() { "ROME", "LONDON", "NAIROBI", "CALIFORNIA", "ZURICH", "NEW DELHI", "AMSTERDAM", "ABU DHABI", "PARIS" };
 
-        var orderedList = from c in cities2
-                          orderby c.Count(), c
-                          select c;
-
-        cities2.ToList().ForEach(c => Console.WriteLine(c + " "));
-        Console.WriteLine();
+        var orderedCities = cities2.OrderBy(city => city.Length).ThenBy(city => city);
+        orderedCities.ToList().ForEach(c => Console.WriteLine(c));
 
         Console.WriteLine("..............Task 8...............");
+
         List<string> foods = new List<string>() { "Honey", "Butter", "Butter", "Butter", "Honey", "Brade", "Biscuit", "Biscuit" };
-        var orderByAscending = foods.Distinct().OrderBy(x => x).ToList();
-        orderByAscending.ForEach(c => Console.WriteLine(c + " "));
+        foods.Distinct().OrderBy(x => x).ToList().ForEach(c => Console.WriteLine(c + " "));
 
 
 
