@@ -15,31 +15,23 @@ internal class Program
         var devidedByTwo = from s in ints
                            where s % 2 == 0
                            select s;
-        foreach (var s in devidedByTwo)
-        {
-            Console.Write(s + " ");
-
-        }
+        devidedByTwo.ToList().ForEach(s=> Console.Write(s + " "));
+    
         Console.WriteLine("\n..............Task 2...............");
 
         List<int> ints2 = new List<int>() { 1, 3, -2, -4, -7, -3, -8, 12, 19, 6, 9, 10, 14 };
         var positiveNumbers = from s in ints2
-                              where s > 0
-                              where s < 12
+                              where s > 0 && s <12
                               select s;
-        foreach (var s in positiveNumbers)
-        {
-            Console.Write(s + " ");
-        }
+        positiveNumbers.ToList().ForEach(s => Console.Write(s + " "));
+
         Console.WriteLine("\n..............Task 3...............");
 
         int[] array = new int[4] { 9, 8, 6, 5 };
         var sqrNumbers = from s in array
                          select "{ Number = " + s + ", SqrNo = " + (s * s) + " }";
-        foreach (var s in sqrNumbers)
-        {
-            Console.WriteLine(s);
-        }
+        sqrNumbers.ToList().ForEach(s => Console.WriteLine(s + " "));
+       
         Console.WriteLine("..............Task 4...............");
 
         int[] array2 = new int[6] { 5, 5, 5, 9, 9, 1 };
@@ -65,10 +57,8 @@ internal class Program
 
         List<int> intsList = new List<int> { 5, 7, 13, 24, 6, 9, 8, 7 };
         Console.WriteLine("The members of the list are: ");
-        foreach (var item in intsList)
-        {
-            Console.Write(item + " ");
-        }
+        intsList.ToList().ForEach(s => Console.Write(s + " "));
+
         Console.WriteLine("\nHow many records do you want to display? : ");
 
         if (int.TryParse(Console.ReadLine(), out int n))
@@ -86,10 +76,7 @@ internal class Program
                 var topRecords = intsList.OrderByDescending(x => x).Take(n).ToList();
 
                 Console.Write("The top " + n + " records from the list are: ");
-                foreach (int num in topRecords)
-                {
-                    Console.Write(num + " ");
-                }
+                topRecords.ToList().ForEach(n => Console.Write(n + " "));
                 Console.WriteLine();
             }
         else
@@ -105,21 +92,14 @@ internal class Program
                           orderby c.Count(), c
                           select c;
 
-        foreach (string s in orderedList)
-        {
-            Console.WriteLine(s);
-        }
+        cities2.ToList().ForEach(c => Console.WriteLine(c + " "));
         Console.WriteLine();
 
         Console.WriteLine("..............Task 8...............");
         List<string> foods = new List<string>() { "Honey", "Butter", "Butter", "Butter", "Honey", "Brade", "Biscuit", "Biscuit" };
-        var orderByAscending = from s in foods.Distinct()
-                               orderby s
-                               select s;
-        foreach (string s in orderByAscending)
-        {
-            Console.WriteLine(s);
-        }
+        var orderByAscending = foods.Distinct().OrderBy(x => x).ToList();
+        orderByAscending.ForEach(c => Console.WriteLine(c + " "));
+
 
 
     }
