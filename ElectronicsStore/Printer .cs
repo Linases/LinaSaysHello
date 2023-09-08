@@ -14,7 +14,7 @@ namespace AqaLabHomeworkFilesStorage.Task7
 
         public Printer(string? modelName, decimal price, int paperWidth, int paperHeight) : base(modelName, price)
         {
-
+             
             PaperWidth = paperWidth;
             PaperHeight = paperHeight;
         }
@@ -27,10 +27,9 @@ namespace AqaLabHomeworkFilesStorage.Task7
             }
         }
 
-        public void Print()
+        public override void TurnOn()
         {
-            Console.WriteLine("Printing...");
+            Console.WriteLine("Press button at the top");
         }
-
     }
 }

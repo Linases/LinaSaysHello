@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class MobilePhone : ElectricalDevice, ITakePhoto
+    public class MobilePhone : PhotoCamera
     {
-        public double NumberOfPixelsInCamera { get; set; }
 
-        public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price) : base(modelName, price)
-        {
-            NumberOfPixelsInCamera = numberOfPixelsInCamera;
-        }
+        public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price) : base(numberOfPixelsInCamera, modelName, price)
+        { }
+            
 
         public override string Description
         {
@@ -24,10 +22,14 @@ namespace AqaLabHomeworkFilesStorage.Task7
             }
         }
 
-        public void TakePhoto()
+        public override void TakePhoto()
         {
             Console.WriteLine("Press button on the screen and photo is ready");
         }
 
+        public override void TurnOn()
+        {
+            Console.WriteLine("Press left side button");
+        }
     }
 }

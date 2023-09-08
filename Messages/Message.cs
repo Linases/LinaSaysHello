@@ -1,15 +1,17 @@
 ﻿namespace Messages
 {
-    abstract public class Message
+    abstract public class Message: IDelete
     {
 
         public string Subject = "Hello";
 
-        abstract public string Recipient { get; set; }
+        public abstract string Recipient { get; set; }
         public abstract void Send();
         public void ChangeSubject(string newSubject)
         {
             Subject = newSubject;
         }
+
+        public virtual void Delete () { }
     }
 }

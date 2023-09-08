@@ -11,7 +11,7 @@ namespace ElectronicsStore
         public int PaperWidth { get; set; }
         public int PaperHeight { get; set; }
 
-        void Print();
+        
 
     }
 }

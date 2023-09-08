@@ -7,14 +7,25 @@ using System.Threading.Tasks;
 
 namespace Messages
 {
-    public class TextMessage : Message, IDelete
+    public class TextMessage : Message
     {
         
         private string _recipient;
-        public override string Recipient { get; set; }
+        public override string Recipient
+        {
+            get
+            {
+                return $"Text message to: {_recipient}";
+            }
+            set 
+            {
+            _recipient = value;
+            }
+
+        }
         public string TextBody { get; set; }
        
-        public TextMessage( string recipient, string textbody) 
+        public TextMessage(string recipient, string textbody) 
         {
             Recipient = recipient;
             TextBody = textbody;
@@ -26,11 +37,11 @@ namespace Messages
         }
         public void Print()
         {
-            Console.WriteLine($"Hello, {Recipient}, {TextBody}");
+            Console.WriteLine($"{Recipient}, \nHello, {TextBody}");
 
         }
 
-        public void Delete ()
+        public override void Delete ()
         {
             Console.WriteLine("Your text message was deleted");
         }

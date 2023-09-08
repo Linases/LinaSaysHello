@@ -7,19 +7,16 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class Polaroid : ElectricalDevice, ITakePhoto, IPrintOnPaper
+    public class Polaroid : PhotoCamera,  IPrintOnPaper
     {
         public int PaperWidth { get; set; }
         public int PaperHeight { get; set; }
 
-        public double NumberOfPixelsInCamera { get; set; }
 
-        public Polaroid(int paperWidth, int paperHeight, double numberOfPixelsInCamera, string? modelName, decimal price): base (modelName, price)
+        public Polaroid(int paperWidth, int paperHeight, double numberOfPixelsInCamera, string? modelName, decimal price): base (numberOfPixelsInCamera, modelName, price)
         {
             PaperWidth = paperWidth;
             PaperHeight = paperHeight;
-            NumberOfPixelsInCamera = numberOfPixelsInCamera;
-
         }
 
         public override string Description
@@ -29,8 +26,7 @@ namespace AqaLabHomeworkFilesStorage.Task7
                 return $"Price: {Price}, model:{ModelName}, number of pixels in camera: {NumberOfPixelsInCamera}";
             }
         }
-
-        public void TakePhoto()
+        public override void TakePhoto()
         {
             Console.WriteLine("Press black button at the top and photo is ready");
         }
@@ -39,5 +35,10 @@ namespace AqaLabHomeworkFilesStorage.Task7
         {
             Console.WriteLine("Printing...");
         }
+        public override void TurnOn()
+        {
+            Console.WriteLine("Press right side button");
+        }
     }
+
 }

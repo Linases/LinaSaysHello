@@ -6,11 +6,21 @@ using System.Threading.Tasks;
 
 namespace Messages
 {
-    public class EmailMessage : Message, IDelete , ISender
+    public class EmailMessage : Message, ISender
     {
 
         private string _recipient;
-        public override string Recipient { get; set; }
+        public override string Recipient
+        {
+            get
+            {
+                return $"Email to: {_recipient}";
+            }
+            set {
+                _recipient = value;
+            }
+
+        }
         public bool IsImportant { get; set; }
 
         public string SenderName { get; set; }
@@ -29,22 +39,23 @@ namespace Messages
         {
             if (IsImportant)
             {
-                Console.WriteLine($"Hello, {Recipient}, {Subject} -  please reply urgent!, {SenderName}");
+                Console.WriteLine($"{Recipient}, {Subject} -  please reply urgent!, {SenderName}");
             }
             else
             {
-                Console.WriteLine($"Hello, {Recipient}, how are you?, {SenderName}");
+                Console.WriteLine($"{Recipient},\n" +
+                    $"Hello, how are you?, {SenderName}");
             }
 
         }
-        public void Delete ()
+        public override void Delete()
         {
             Console.WriteLine("Your email message was deleted.");
         }
 
-        public void UpdateSenderName(string NewSenderName) 
+        public void UpdateSenderName(string NewSenderName)
         {
-            Console.WriteLine( SenderName = NewSenderName );
+            Console.WriteLine(SenderName = NewSenderName);
         }
     }
 }

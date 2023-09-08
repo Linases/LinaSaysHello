@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ElectronicsStore
 {
-    public abstract class ElectricalDevice 
+    public abstract class PhotoCamera
     {
-
         protected string? ModelName;
         protected decimal Price;
-
-        public ElectricalDevice (string? modelName, decimal price)
+        protected double NumberOfPixelsInCamera { get; set; }
+        public PhotoCamera(double numberOfPixelsInCamera, string? modelName, decimal price)
         {
+            NumberOfPixelsInCamera = numberOfPixelsInCamera;
             ModelName = modelName;
             Price = price;
         }
@@ -22,14 +22,10 @@ namespace ElectronicsStore
 
         public abstract void TurnOn();
 
-  
         public void TunrnOff()
         {
             Console.WriteLine("Press Turn Off button");
         }
-        public void Print()
-        {
-            Console.WriteLine("Printing.....");
-        }
+        public abstract void TakePhoto();
     }
 }
