@@ -19,10 +19,8 @@ namespace LinaSaysHello
     internal class Program
     {
         static void Main(string[] args)
-        {
-
-            //3-1/
-            //Task1//
+        {    //    //3-1/
+             //Task1//
             var num = 20;
             num += 5;
 
@@ -325,8 +323,9 @@ namespace LinaSaysHello
 
 
 
-        
-        
-        
-        
-           
+
+
+
+
+
+

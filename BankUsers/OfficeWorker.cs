@@ -13,6 +13,5 @@ namespace BankUsers
         {
             OfficeWorkerType = officeWorkerType;
         }
-
     }
 }

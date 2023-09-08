@@ -30,7 +30,6 @@ internal class Program
 
         OfficeWorker officeworker = new OfficeWorker("Name", "LastName", 25, OfficeWorkerTypes.OfficeWorker.LoanSpecialist );
         Console.WriteLine($" Client name: {officeworker.FirstName}, client Last Name: {officeworker.LastName}, Client age: {officeworker.Age}, type: {officeworker.OfficeWorkerType}");
-
     }
 
 
