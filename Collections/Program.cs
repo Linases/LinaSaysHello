@@ -7,6 +7,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Console.WriteLine("--------------List-----------------");
+
         List<int> intList = new List<int>() { 5, 10, 12, 8, 7, 9, 45, 96, 36, 15 };
         Console.WriteLine(ListsTask.SumOfEvenNumbers(intList));
 
@@ -38,6 +39,7 @@ internal class Program
             Console.Write(str + " ");
         }
         Console.WriteLine("\n--------------LinkedList.2-----------------");
+
         LinkedList<int> list1 = new LinkedList<int>(new[] { 1, 3, 4, 7, 12 });
         foreach (int str in list1)
         { Console.Write(str + " ");}
@@ -70,6 +72,7 @@ internal class Program
         }
 
         Console.WriteLine("\n--------------Queue-----------------");
+
         Queue<int> numbers = new Queue<int>();
 
         Console.Write("\nEnter several numbers to the queue. Write 'ok' to finish queue:");
@@ -91,7 +94,6 @@ internal class Program
         }
         catch (FormatException ex)
         {
-
             Console.WriteLine(ex.Message);
         }
 
@@ -100,8 +102,8 @@ internal class Program
         numbers = Queue.DeleteMaxValue(numbers);
         Console.WriteLine("Max value after deletion: " + Queue.GetMaxValue(numbers));
 
+        Console.WriteLine("\n--------------Stack-----------------");
 
-        //Stack//
         Stack<char> stack = new Stack<char>();
 
         Console.Write("Enter the first letter: ");
@@ -127,8 +129,8 @@ internal class Program
         }
         Console.WriteLine();
 
-        //Dictionary//
-        //1//
+        Console.WriteLine("\n--------------Dictionary.1-----------------");
+       
         Dictionary<string, int> person = new Dictionary<string, int>();
 
         person.Add("Lina", 39);
@@ -139,13 +141,14 @@ internal class Program
         }
         var first = person.First();
         Console.WriteLine($"{first.Key} {first.Value}");
-        //2//
+
+        Console.WriteLine("\n--------------Dictionary.2-----------------");
+
         List<int> integerList = new List<int>() { 5, 10, 12, 8, 7, 9, 45, 96, 36, 15 };
         List<string> stringList = new List<string>() { "g", "gg", "f", "fr", "gfff", "hj", "idfh", "d", "gff", "da" };
         Dictionary.SortAndMerge(integerList, stringList);
 
-
-        //3//
+        Console.WriteLine("\n--------------Dictionary.3-----------------");
         Dictionary<string, City> cityDictionary = new Dictionary<string, City>();
         cityDictionary["Vilnius"] = new City(593436, 2.530);
         cityDictionary["Kaunas"] = new City(304459, 1.653);

@@ -16,17 +16,28 @@ namespace Collections
             {
                 throw new InvalidOperationException("Queue is empty.");
             }
-            int[] inputs = queue.ToArray();
-            int maxValue = inputs[0];
 
-            foreach (int value in inputs)
+            int maxValue = queue.Peek();
+            if (queue.Count == 1)
             {
+                return maxValue;
+            }
+
+            Queue<int> tempQueue = new Queue<int>();
+            while (queue.Count > 0)
+            {
+                int value = queue.Dequeue();
                 if (value > maxValue)
                 {
                     maxValue = value;
                 }
+                tempQueue.Enqueue(value);
             }
 
+            while (tempQueue.Count > 0)
+            {
+                queue.Enqueue(tempQueue.Dequeue());
+            }
             return maxValue;
         }
 
@@ -42,16 +53,13 @@ namespace Collections
             Queue<int> newQueue = new Queue<int>();
             foreach (int value in queue)
             {
-                if (value!=maxValue)
+                if (value != maxValue)
                 {
                     newQueue.Enqueue(value);
-                    Console.WriteLine(newQueue);
                 }
-               
             }
             return newQueue;
-          
         }
     }
 }
-    
+
