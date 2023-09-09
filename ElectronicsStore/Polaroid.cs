@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class Polaroid : PhotoCamera,  IPrintOnPaper
+    public class Polaroid : DeviceWithCamera,  IPrintOnPaper
     {
         public int PaperWidth { get; set; }
         public int PaperHeight { get; set; }
@@ -31,10 +31,6 @@ namespace AqaLabHomeworkFilesStorage.Task7
             Console.WriteLine("Press black button at the top and photo is ready");
         }
 
-        public void Print()
-        {
-            Console.WriteLine("Printing...");
-        }
         public override void TurnOn()
         {
             Console.WriteLine("Press right side button");

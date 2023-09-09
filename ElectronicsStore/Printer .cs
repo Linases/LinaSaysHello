@@ -14,7 +14,6 @@ namespace AqaLabHomeworkFilesStorage.Task7
 
         public Printer(string? modelName, decimal price, int paperWidth, int paperHeight) : base(modelName, price)
         {
-             
             PaperWidth = paperWidth;
             PaperHeight = paperHeight;
         }

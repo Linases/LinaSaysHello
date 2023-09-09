@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AqaLabHomeworkFilesStorage.Task7
 {
-    public class MobilePhone : PhotoCamera
+    public class MobilePhone : DeviceWithCamera
     {
 
         public MobilePhone(double numberOfPixelsInCamera, string? modelName, decimal price) : base(numberOfPixelsInCamera, modelName, price)
