@@ -27,7 +27,7 @@ namespace NUnitTestProject
         {
             List<int> intList = new List<int>() { 1, 2, 3, 4 };
             int variable = 1;
-            Assert.Contains(variable, intList);
+            Assert.That(intList, Does.Contain(variable));
             Assert.That(intList, Is.All.Positive);
             Assert.That(intList.Count, Is.Not.EqualTo(0));
         }
@@ -51,17 +51,16 @@ namespace NUnitTestProject
             Assert.That(list, Is.EquivalentTo(listNew));
         }
         [Test]
-        public void TrueFalseTest ()
+        public void TrueFalseTest()
         {
             int number = 0;
             Assert.True(number.GetType() == typeof(Int32));
         }
         [Test]
-        public void StringsTest () 
+        public void StringsTest()
         {
-        string word1 = "abc";
-        string word2  = "abc";
-
+            string word1 = "abc";
+            string word2 = "abc";
             Assert.That(word1, Is.SameAs(word2));
         }
     }
