@@ -96,8 +96,5 @@ internal class Program
 
         List<string> foods = new List<string>() { "Honey", "Butter", "Butter", "Butter", "Honey", "Brade", "Biscuit", "Biscuit" };
         foods.Distinct().OrderBy(x => x).ToList().ForEach(c => Console.WriteLine(c + " "));
-
-
-
     }
 }
