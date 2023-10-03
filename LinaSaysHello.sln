@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "task16", "task16", "{8FD78E4A-CAEE-4F8D-BFE0-CDF64453911F}"
 	ProjectSection(SolutionItems) = preProject
 		selectors.txt = selectors.txt
+		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
 Global
