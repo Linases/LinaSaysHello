@@ -3,11 +3,11 @@ task1
 div.rt-tbody>div:nth-of-type(n)
 
 //div[@class='rt-tr-group']//div[text()='Gentry']//ancestor::div[@class='rt-tr-group']
-div.rt-tr-group>div :nth-of-type(2)//doesn't work need a hint!
+div.rt-tbody > div:nth-child(2) > div > div:nth-child(2) //for last name "Gentry"//
 
 //div[@class='rt-tr-group']//div[4]//following::span[@title='Delete']
 //div[@class='rt-tr-group']//div[text()='alden@example.com']//following::span[@title='Delete']//By exact email
-div.rt-tr-group>div :nth-of-type(4)>span[title='Delete']need a hint as well
+div.rt-tr-group>div :nth-of-type(4)>span[title='Delete'] dont know need a hint 
 
 task2
 //div[@class='rt-table']//div[3]/div[1]//following::div[@class ='rt-tr-group'][2]//child::div[3]/text()
