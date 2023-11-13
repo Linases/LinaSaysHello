@@ -1,10 +1,4 @@
-﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using NUnit.Framework;
 
 namespace NUnitTestProject
 {
@@ -16,12 +10,14 @@ namespace NUnitTestProject
         {
             Assert.Fail();
         }
+
         [Test]
         public void EmptyTest()
         {
             string a = string.Empty;
             Assert.That(a, Is.Empty);
         }
+
         [Test]
         public void CollectionTest()
         {
@@ -31,18 +27,13 @@ namespace NUnitTestProject
             Assert.That(intList, Is.All.Positive);
             Assert.That(intList.Count, Is.Not.EqualTo(0));
         }
+
         [Test]
         public void ExceptionTest()
         {
-            AssertionsTest assertionsTest = new AssertionsTest();
-            Assert.Throws<NullReferenceException>(() => assertionsTest.NullMethod());
+            Assert.Throws<NullReferenceException>(() => NullMethod());
         }
 
-        private void NullMethod()
-        {
-            string nullString = null;
-            int length = nullString.Length;
-        }
         [Test]
         public void CollectionTest2()
         {
@@ -50,18 +41,26 @@ namespace NUnitTestProject
             List<string> listNew = new List<string>() { "c", "b", "a" };
             Assert.That(list, Is.EquivalentTo(listNew));
         }
+
         [Test]
         public void TrueFalseTest()
         {
             int number = 0;
             Assert.True(number.GetType() == typeof(Int32));
         }
+
         [Test]
         public void StringsTest()
         {
             string word1 = "abc";
             string word2 = "abc";
             Assert.That(word1, Is.SameAs(word2));
+        }
+
+        private void NullMethod()
+        {
+            string nullString = null;
+            int length = nullString.Length;
         }
     }
 }
