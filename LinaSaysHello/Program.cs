@@ -18,7 +18,7 @@ namespace LinaSaysHello
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {    //    //3-1/
              //Task1//
             var num = 20;
